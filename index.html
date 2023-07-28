@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Most Efficient Combination Calculator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Most Efficient Combination Calculator</h1>
+    <div id="inputFields">
+      <div class="input-row">
+        <label>Name:</label>
+        <input type="text" class="input-text" placeholder="Enter a name">
+        <label>Damage:</label>
+        <input type="number" class="input-number">
+        <button class="remove-btn" onclick="removeInputField(this)">Remove</button>
+      </div>
+    </div>
+    <button id="addBtn" onclick="addInputField()">Add Team Damage</button>
+    <label>Enter the target integer:</label>
+    <input type="number" id="targetNumber">
+    <button id="calculateBtn" onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
