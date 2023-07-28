@@ -89,19 +89,25 @@ function findCombination(target, data) {
   return `${result}\nTotal Damage Overage: ${totalOverage}`;
 }
 
-function switchTab(event, tabId) {
-  const tabs = document.getElementsByClassName("tab");
-  const tabContents = document.getElementsByClassName("tab-content");
+function switchTab(tabId) {
+  const tabs = document.querySelectorAll(".tab");
+  const tabContents = document.querySelectorAll(".tab-content");
 
-  for (let i = 0; i < tabs.length; i++) {
-    if (tabs[i].id === tabId) {
-      tabs[i].classList.add("active");
-      tabContents[i].classList.add("active");
+  tabs.forEach(tab => {
+    if (tab.id === tabId) {
+      tab.classList.add("active");
     } else {
-      tabs[i].classList.remove("active");
-      tabContents[i].classList.remove("active");
+      tab.classList.remove("active");
     }
-  }
+  });
+
+  tabContents.forEach(content => {
+    if (content.id === tabId) {
+      content.classList.add("active");
+    } else {
+      content.classList.remove("active");
+    }
+  });
 }
 
 document.getElementById("addBtn").addEventListener("mousedown", function(event) {
@@ -122,4 +128,4 @@ document.getElementById("calculateBtn").addEventListener("click", function() {
 });
 
 // Set the default active tab
-switchTab(null, "tab1");
+switchTab("tab1");
