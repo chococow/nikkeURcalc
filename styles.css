@@ -56,3 +56,30 @@ button:hover {
 .remove-btn {
   margin-left: 10px;
 }
+
+.tab-menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  background-color: #f1f1f1;
+  margin-right: 5px;
+}
+
+.tab.active {
+  background-color: #ccc;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
