@@ -89,6 +89,21 @@ function findCombination(target, data) {
   return `${result}\nTotal Damage Overage: ${totalOverage}`;
 }
 
+function switchTab(event, tabId) {
+  const tabs = document.getElementsByClassName("tab");
+  const tabContents = document.getElementsByClassName("tab-content");
+
+  for (let i = 0; i < tabs.length; i++) {
+    if (tabs[i].id === tabId) {
+      tabs[i].classList.add("active");
+      tabContents[i].classList.add("active");
+    } else {
+      tabs[i].classList.remove("active");
+      tabContents[i].classList.remove("active");
+    }
+  }
+}
+
 document.getElementById("addBtn").addEventListener("mousedown", function(event) {
   event.preventDefault();
   addInputField();
@@ -105,3 +120,6 @@ document.getElementById("inputFields").addEventListener("click", function(event)
 document.getElementById("calculateBtn").addEventListener("click", function() {
   calculate();
 });
+
+// Set the default active tab
+switchTab(null, "tab1");
